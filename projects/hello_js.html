@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hallo JavaScript</title>
+</head>
+
+<body>
+
+    <h1>What Can JavaScript Do?</h1>
+
+    <p id="demo">JavaScript can change HTML</p>
+
+    <button id="myButton" type="button">
+        Click Me!
+    </button>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("myButton").addEventListener("click", function () {
+                document.getElementById("demo").innerHTML = "Hallo JavaScript!";
+            });
+        });
+    </script>
+</body>
+
+</html>
