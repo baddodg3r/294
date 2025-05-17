@@ -19,11 +19,15 @@
 
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            document.getElementById("myButton").addEventListener("click", function () {
-                document.getElementById("demo").innerHTML = "Hallo JavaScript!";
-            });
-        });
+        function handleButtonClick() {
+            document.getElementById("demo").innerHTML = "Hallo JavaScript!";
+        }
+
+        function setupButtonListener() {
+            document.getElementById("myButton").addEventListener("click", handleButtonClick);
+        }
+
+        document.addEventListener("DOMContentLoaded", setupButtonListener);
     </script>
 </body>
 
