@@ -13,7 +13,7 @@
 
     <p id="demo">JavaScript can change HTML</p>
 
-    <button id="myButton" type="button">
+    <button id="myButton" onclick="handleButtonClick()" type="button">
         Click Me!
     </button>
 
@@ -22,12 +22,6 @@
         function handleButtonClick() {
             document.getElementById("demo").innerHTML = "Hallo JavaScript!";
         }
-
-        function setupButtonListener() {
-            document.getElementById("myButton").addEventListener("click", handleButtonClick);
-        }
-
-        document.addEventListener("DOMContentLoaded", setupButtonListener);
     </script>
 </body>
 
