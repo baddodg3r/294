@@ -6,8 +6,10 @@ console.log(einkaufsliste);
 einkaufsliste.push("Milch", "Brot", "Äpfel", "Käse");
 console.log(einkaufsliste);
 console.log("Die Länge der Einkaufsliste ist: " + einkaufsliste.length);
+
 // Gib die erste Position des Array aus
 console.log(einkaufsliste[0]);
+
 // Gib die dritte Position des Array aus
 // Erstelle Variable für das letzte Element
 let lastE = einkaufsliste.length - 1;
@@ -40,4 +42,6 @@ let todos_index = todos.indexOf("Zimmer aufräumen") + 1;
 todos.splice(todos_index, 0, "Freunde anrufen");
 
 console.log(todos);
+
+
 
