@@ -30,39 +30,26 @@
     </div>
 
     <script>
-        /* Demo */
-        // Assignment of the element in the DOM with the ID btn1 to a variable btn1
-        // with this variable we can access the element in the DOM
-        let btn1 = document.querySelector("#btn1");
-        // Listen for the click event on the button
-        // and execute the function when the event occurs
-        btn1.addEventListener("click", function () {
+        window.addEventListener('load', function () {
+            const btn1 = document.querySelector('#btn1');
+            btn1.addEventListener('click', function (event) {
+                console.log('Hi, I\'m function Demo on btn ' + event.target.innerHTML);
+            });
 
-            // event.target is the element that triggered the event
-            // in this case the button with the ID btn1
-            // and we can access the innerHTML of the button
-            // and log it to the console
-            console.log("Hi, I'm function Demo on btn " + event.target.innerHTML);
-        });
+            btn1.addEventListener('click', function (event) {
+                console.log('Hi, I\'m another function Demo on btn ' + event.target.innerHTML);
+            });
 
-        // Another Event Listener on the same button
-        // This will not overwrite the first event listener
-        // but add another one to the button
-        btn1.addEventListener("click", function () {
-            console.log(
-                "Hi, I'm another function Demo on btn " + event.target.innerHTML
-            );
-        });
-        buttons.addEventListener("click", function () {
-            console.log(
-                "Hi, I'm another function Demo on btn " + event.target
-            );
-        });
-        // btn2 bekommt ein eigenes Event und stoppt das Bubbling
-        let btn2 = document.querySelector("#btn2");
-        btn2.addEventListener("click", function (event) {
-            event.stopPropagation(); // <<< verhindert Bubbling
-            console.log("Hi, I'm btn2 and I stop bubbling.");
+            const btn2 = document.querySelector('#btn2');
+            btn2.addEventListener('click', function (event) {
+                event.stopPropagation();
+                console.log('Hi, I\'m btn2 and I stop bubbling.');
+            });
+
+            const container = document.querySelector('#buttons');
+            container.addEventListener('click', function (event) {
+                console.log('Hi, I\'m the container handler for ' + event.target.id);
+            });
         });
     </script>
 </body>
