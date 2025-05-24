@@ -10,15 +10,15 @@ const question1 = {
   correctAnswer: "Alfa" // Brauchen wir heute noch nicht, gut für später
 };
 
-
 function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <>
-      <h1>Willkommen beim WISS-Quiz</h1>
-      <button>Nächste Frage</button>
-    </>
+    <div className="App">
+      <h1>Willkommen beim WISS-Quiz!</h1>
+      <h2>{question1.question}</h2>
+      {/* Hier kommen gleich das Bild und die Buttons hin */}
+    </div>
   );
 };
 
