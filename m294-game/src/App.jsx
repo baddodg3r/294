@@ -7,6 +7,7 @@ import Game from "./pages/Game";
 import Impressum from "./pages/Impressum";
 import Rules from "./pages/Rules";
 import Layout from "./components/layout";
+import PageNotFound from "./pages/PageNotFound";
 
 
 // App.jsx ist die Hauptkomponente der App
@@ -23,6 +24,7 @@ function App() {
         <Route path="/quiz" element={<Game />} />
         <Route path="/regeln" element={<Rules />} />
         <Route path="/blabli" element={<Impressum />} />
+        <Route path="*" element={<PageNotFound />} />
       </Route>
 
     </Routes>
