@@ -1,5 +1,11 @@
+import { Link } from "react-router-dom";
 const Navigation = () => {
-    return <div>Hier wird später unsere Navigation sein</div>;
+    return <nav className="layout-header-nav">
+        <Link to="/">Home</Link>
+        <Link to="/quiz">Quiz</Link>
+        <Link to="/regeln">Regeln</Link>
+        <Link to="/blabli">Impressum</Link>
+    </nav>;
 };
 
 

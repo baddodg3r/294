@@ -1,13 +1,13 @@
 import Button from './button';
 
 function GameSession({ question }) {
-    const game_question = question; // Frageobjekt aus Props holen
+
 
     return (
         <div>
-            <p>Hier findet das eigentliche Spiel statt...</p>
+            <h2>{question.question}</h2>
             <div className="buttonbar">
-                {game_question.answers.map((answer, index) => (
+                {question.answers.map((answer, index) => (
                     <Button
                         key={index}
                         text={answer}

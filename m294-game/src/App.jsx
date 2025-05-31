@@ -1,46 +1,35 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
-import './App.css';
-import Button from './components/button';
-import GameSession from './components/game-session';
-import Greeting from './components/greeting';
-import Navigation from './components/navigation';
-
-//Dummydaten für die erste Frage
-const question1 = {
-  question: "Welcher Begriff kommt im ICAO-Buchstabieralphabet zuerst?",
-  answers: ["Alfa", "Bravo", "Charlie"],
-  correctAnswer: "Alfa" // Brauchen wir heute noch nicht, gut für später
-};
+import "./App.css";
+import { Routes, Route, Link } from "react-router-dom";
 
 
+import Home from './pages/Home';
+import Game from "./pages/Game";
+import Impressum from "./pages/Impressum";
+import Rules from "./pages/Rules";
+import Layout from "./components/layout";
 
+
+// App.jsx ist die Hauptkomponente der App
+// Hier wird die App initialisiert und die erste Frage angezeigt
 function App() {
-
   return (
-    <div className="App">
-      {/* {Navigation} */}
-      {/*component ohne Props*/}
-      <Navigation />
-      {/*Header mit logo und Frage*/}
-      <header className="App-header">
-        <img src="/vite.svg" className="App-logo" alt="logo" />
-        <h1>Willkommen beim WISS-Quiz!</h1>
-        <h2>{question1.question}</h2>
-      </header>
-
-      {/* {GameSession} */}
-      {/* Hier wird eine Variable übergeben*/}
-      <GameSession question={question1} />
-      {/* {Greeting} */}
-      {/*Komponente der wir einen String übergeben*/}
-      <Greeting name="Player 456" />
 
 
 
-    </div>
+
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="/quiz" element={<Game />} />
+        <Route path="/regeln" element={<Rules />} />
+        <Route path="/blabli" element={<Impressum />} />
+      </Route>
+
+    </Routes>
+
   );
-};
+}
+
 
 export default App;
+
