@@ -3,6 +3,9 @@ import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './App.css';
 import Button from './components/button';
+import GameSession from './components/game-session';
+import Greeting from './components/greeting';
+import Navigation from './components/navigation';
 
 //Dummydaten für die erste Frage
 const question1 = {
@@ -17,30 +20,25 @@ function App() {
 
   return (
     <div className="App">
-      <header>
+      {/* {Navigation} */}
+      {/*component ohne Props*/}
+      <Navigation />
+      {/*Header mit logo und Frage*/}
+      <header className="App-header">
+        <img src="/vite.svg" className="App-logo" alt="logo" />
         <h1>Willkommen beim WISS-Quiz!</h1>
         <h2>{question1.question}</h2>
       </header>
 
-      <div className='buttonbar'>
-        {question1.answers.map((answer) => (
-          <Button
+      {/* {GameSession} */}
+      {/* Hier wird eine Variable übergeben*/}
+      <GameSession question={question1} />
+      {/* {Greeting} */}
+      {/*Komponente der wir einen String übergeben*/}
+      <Greeting name="Player 456" />
 
-            key={answer}
-            text={answer}
 
-            onAnswerClick={
-              () => {
-                console.log(`Antwort ${answer} wurde geclickt`);
-              }
-            }
 
-          >
-          </Button>
-
-        ))}
-
-      </div>
     </div>
   );
 };

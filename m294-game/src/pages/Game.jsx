@@ -13,7 +13,7 @@ const question1 = {
 
 
 
-function App() {
+function Game() {
 
     return (
         <div className="App">
@@ -45,4 +45,4 @@ function App() {
     );
 };
 
-export default App;
+export default Game;
