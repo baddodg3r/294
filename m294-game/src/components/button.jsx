@@ -1,6 +1,16 @@
-const Button = ({ text, onAnswerClick }) => {
-    return <button onClick={onAnswerClick}>{text}</button>;
-};
-
-
-export default Button;
+export default function Button({
+    answer,
+    onAnswerClick,
+    disabled = false,
+    className,
+}) {
+    return (
+        <button
+            className={`button ${className || ""}`}
+            onClick={onAnswerClick}
+            disabled={disabled}
+        >
+            {answer}
+        </button>
+    );
+}
