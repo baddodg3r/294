@@ -14,7 +14,7 @@ function GameSession({ questions, onResetGame }) {
                 {currentQuestion.answers.map((answer, index) => (
                     <Button
                         key={index}
-                        text={answer}
+                        answer={answer}
                         onAnswerClick={() => {
                             console.log(`Antwort ${index + 1}: ${answer} wurde geklickt`);
                             setQuestionIndex(questionIndex + 1);
